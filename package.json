@@ -1,0 +1,19 @@
+{
+  "name": "intoit-quiz-template",
+  "version": "1.0.0",
+  "description": "Webpack set-up with hot reload from scratch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexhhn/intoit-quiz-template.git"
+  },
+  "author": "Alex H. H. Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexhhn/intoit-quiz-template/issues"
+  },
+  "homepage": "https://github.com/alexhhn/intoit-quiz-template#readme"
+}
