@@ -41,8 +41,10 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.3",
+    "@hot-loader/react-dom": "^16.8.6",
     "axios": "^0.18.0",
     "react": "^16.8.6",
-    "@hot-loader/react-dom": "^16.8.6"
+    "react-redux": "^7.0.2",
+    "redux": "^4.0.1"
   }
 }
