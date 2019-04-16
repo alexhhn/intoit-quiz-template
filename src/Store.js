@@ -1,38 +1,28 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
-/*
- * action types
- */
+import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
+import todoReducers from "./ducks/subjects";
 
-const ADD_TODO = "ADD_TODO";
-
-/*
- * action creators
- */
-
-function addTodo(text) {
-  return { type: ADD_TODO, text };
-}
-
-const todoReducers = (state = [], action) => {
-  switch (action.type) {
-    case ADD_TODO:
-      return Object.assign({}, state, {
-        todos: [
-          ...state.todos,
-          {
-            text: action.text
-          }
-        ]
-      });
-    default:
-      return state;
+const configureReduxStore = history => {
+  const allMiddleware = [];
+  // Add redux logger if not in production
+  if (process.env.NODE_ENV !== `production`) {
+    console.log("heis");
+    const createLogger = require(`redux-logger`).createLogger;
+    const logger = createLogger({ collapsed: true });
+    allMiddleware.push(logger);
   }
+
+  const rootReducer = history =>
+    combineReducers({
+      todoReducers
+    });
+
+  console.log("allMiddleware", allMiddleware);
+
+  return createStore(
+    rootReducer(history),
+    composeWithDevTools(applyMiddleware(...allMiddleware))
+  );
 };
 
-const todoApp = combineReducers({
-  todoReducers
-});
-
-const store = createStore(todoApp);
-
-export default store;
+export default configureReduxStore(history);
