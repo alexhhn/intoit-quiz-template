@@ -1,3 +1,5 @@
+//Fixed hot-reload warning by: https://github.com/gaearon/react-hot-loader/issues/1227
+
 module.exports = function(api) {
   api.cache(true);
 
