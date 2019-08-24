@@ -1,12 +1,13 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
-import todoReducers from "./ducks/subjects";
+import subjectsReducer from "./ducks/subjects";
+import promise from "redux-promise-middleware";
 
 const configureReduxStore = history => {
-  const allMiddleware = [];
+  //? Some middleware to consider using: Redux-thunk, routerMiddleware
+  const allMiddleware = [promiseMiddleware];
   // Add redux logger if not in production
   if (process.env.NODE_ENV !== `production`) {
-    console.log("heis");
     const createLogger = require(`redux-logger`).createLogger;
     const logger = createLogger({ collapsed: true });
     allMiddleware.push(logger);
@@ -14,7 +15,7 @@ const configureReduxStore = history => {
 
   const rootReducer = history =>
     combineReducers({
-      todoReducers
+      subjectsReducer
     });
 
   console.log("allMiddleware", allMiddleware);

@@ -4,7 +4,7 @@ import config from "../config";
 // TODO: Add to constants.js
 const BASE_URL = "https://ace-restapi.herokuapp.com/";
 const TOKEN =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo2ODE3OH0sImlhdCI6MTU1NTQxMTI4NCwiZXhwIjoxNTU4MDAzMjg0fQ.u_rPdJ-EYryE6osNGlFezE8PneybqKGXK4XijI12Z-A";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxMTAxMDN9LCJpYXQiOjE1NjUzNDY3OTEsImV4cCI6MTU2NzkzODc5MX0.hU06s6OGwVd2AB7uF7xUkp1JGzteU6kmZYUxqlmUmWQ";
 
 const instance = axios.create({
   baseURL: BASE_URL,

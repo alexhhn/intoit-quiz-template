@@ -1,12 +1,18 @@
+import { createAction, handleActions, combineActions } from "redux-actions";
+import Api from "../../services/Api";
+
+const initialState = {
+  data: null
+};
+
 /*
- * action types
+ * createActions
  */
 
-const ADD_TODO = "ADD_TODO";
-
-/*
- * action creators
- */
+export const fetchSubjects = createAction("FETCH_SUBJECTS", async () => {
+  let res = Api.fetchSubjects();
+  return res;
+});
 
 export function addTodo(text) {
   return { type: ADD_TODO, text };
@@ -20,8 +26,18 @@ const todoReducers = (state = [], action) => {
         [action.text]: true
       });
     default:
-      return state;
+      return { state };
   }
 };
 
-export default todoReducers;
+export default handleActions(
+  {
+    [fetchSubjects](state, action) {
+      console.log(action);
+      return {
+        ...state
+      };
+    }
+  },
+  initialState
+);
