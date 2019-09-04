@@ -1,14 +1,10 @@
 import React from "react";
 import "./app.scss";
 import { hot } from "react-hot-loader/root";
+import HomeConnector from "../pages/Home/HomeConnector";
 
 const App = () => {
-  return (
-    <div>
-      <h1>Quiz</h1>
-      <div>Alternatives heisnn</div>
-    </div>
-  );
+  return <HomeConnector />;
 };
 
 export default hot(App);
